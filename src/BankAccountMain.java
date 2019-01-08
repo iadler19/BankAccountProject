@@ -108,10 +108,10 @@ boolean tf = true;
 	{
 		System.out.println("What is the Account Number of the account you want to withdraw from?");
 		
-		while(!isNumeric(in.next()) || in.nextInt() < 0)
+		while(!isNumeric(in.next()) || in.nextInt() > accounts.size())
 		{
 			System.out.println("Please enter a valid answer:");
-			  
+			  in.nextLine();
 			
 		}
 		int accNumW = in.nextInt();
@@ -132,7 +132,7 @@ boolean tf = true;
 		{
 			System.out.println("What is the Account Number of the account you want to deposit into?");
 			int accNum = 0;
-			while(!isNumeric(in.next()) || in.nextInt() < 0)
+			while(!isNumeric(in.next()) || in.nextInt() > accounts.size())
 			{
 				System.out.println("Please enter a valid answer:");	
 			}
@@ -159,17 +159,16 @@ boolean tf = true;
 		{
 			System.out.println("What is the Account Number of the account you want to transfer from?");
 			
-			while(!isNumeric(in.next()) || in.nextInt() < 0)
+			while(!isNumeric(in.next()) || in.nextInt() > accounts.size())
 			{
 				System.out.println("Please enter a valid answer:");
 			}
 			int accNum1 = in.nextInt();
 			System.out.println("What is the Account Number of the account you want to transfer  to?");
 			
-			while(!isNumeric(in.next()) || in.nextInt() < 0)
+			while(!isNumeric(in.next()) || in.nextInt() > accounts.size())
 			{
-				System.out.println("Please enter a valid answer:");
-				
+				System.out.println("Please enter a valid answer:");	
 			}
 			int accNum2 = in.nextInt();
 			System.out.println("How much money would you like to transfer?");
@@ -189,10 +188,24 @@ boolean tf = true;
 				System.out.println("Transaction not Authorized");
 			}
 		}
+		
+		case "get account number" :
+		{
+			for( BankAccount acc : accounts)
+			{
+				System.out.println(acc.toString());
+			}
+		}
+		
+		
+		}
 	
-	}
-	}
 
-}
+	}
+	else if((ans.toLowerCase()).equals("terminate"))
+	{
+		return ;
+	}
+	}
 	}
 	}
