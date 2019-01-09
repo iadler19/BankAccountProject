@@ -5,7 +5,15 @@ public class SavingsAccount extends BankAccount {
 	private final double MIN_BAL;
 	private final double MIN_BAL_FEE;
 	
-	
+	/**
+	 * 
+	 * 
+	 * @param n
+	 * @param b
+	 * @param r
+	 * @param mb
+	 * @param mbf
+	 */
 	public SavingsAccount(String n, double b, double r, double mb, double mbf)
 	{
 		super(n, b);
@@ -14,6 +22,13 @@ public class SavingsAccount extends BankAccount {
 		MIN_BAL_FEE = mbf;
 		
 	}
+	/**
+	 * 
+	 * @param n
+	 * @param r
+	 * @param mb
+	 * @param mbf
+	 */
 	public SavingsAccount(String n, double r, double mb, double mbf)
 	{
 		super(n);
@@ -21,7 +36,9 @@ public class SavingsAccount extends BankAccount {
 		MIN_BAL = mb;
 		MIN_BAL_FEE = mbf;
 	}
-	
+	/**
+	 * 
+	 */
 	public void withdraw(double amt)
 	{
 					
@@ -36,6 +53,9 @@ public class SavingsAccount extends BankAccount {
 			throw new IllegalArgumentException();
 		}
 	}
+	/**
+	 * 
+	 */
 	public void transfer(BankAccount other, double amt)
 	{
 		if((other.getName()).equals(getName()))
@@ -50,7 +70,9 @@ public class SavingsAccount extends BankAccount {
 		throw new IllegalArgumentException();
 			}
 	
-	
+	/**
+	 * 
+	 */
 	public void addInterest()
 	{
 		deposit(getBalance() * intRate);

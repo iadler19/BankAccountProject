@@ -12,12 +12,14 @@ public BankAccount(String n)
 	name = n;
 	accNum = nextAccNum;
 	balance = 0;
+	nextAccNum++;
 }
  public BankAccount(String n, double b)
  {
 	 name = n;
 		accNum = nextAccNum;
 		balance = b;
+		nextAccNum++;
  }
  
  public void deposit(double amt)
